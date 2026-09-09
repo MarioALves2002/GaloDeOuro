@@ -38,4 +38,31 @@ nav ul {
     gap: 20px;
     list-style: none;
     padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    border-bottom: 3px solid #d4af37;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 5px 0 15px;
+    color: #d4af37;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #d4af37;
 }
