@@ -2,6 +2,8 @@
     border: 1px solid #ccc;
     padding: 16px;
     margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
 }
 
 .rooster-card img {
@@ -15,4 +17,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.rooster-card:hover {
+    transform: translateY(-5px);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+
+header,main,footer {
+    padding: 20px;
 }
