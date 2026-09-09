@@ -100,3 +100,14 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid #d4af37;
+}
+
+footer p {
+    margin: 0;
+}
