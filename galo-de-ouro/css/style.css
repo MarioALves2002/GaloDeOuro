@@ -32,3 +32,10 @@ body {
 header,main,footer {
     padding: 20px;
 }
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
