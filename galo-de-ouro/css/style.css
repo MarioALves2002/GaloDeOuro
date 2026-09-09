@@ -4,7 +4,24 @@
     margin-bottom: 20px;
     text-align: center;
     transition: transform 0.2s ease;
+    perspective: 1000px;
 }
+
+.card-inner {
+    position: relative;
+    display: block;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+
+.card-back {
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+
 
 .rooster-card img {
     width: 100%;
@@ -19,8 +36,12 @@
     gap: 20px;
 }
 
-.rooster-card:hover {
-    transform: translateY(-5px);
+.card-toggle {
+    display: none;
+}
+
+.card-toggle:checked + .card-inner {
+    transform: rotateY(180deg);
 }
 
 body {
