@@ -83,3 +83,20 @@ nav a:hover {
     margin: 0 auto;
     line-height: 1.6;
 }
+
+
+#galos {
+    padding: 40px 20px;
+}
+
+#galos h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 28px;
+}
+
+#galos > p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
