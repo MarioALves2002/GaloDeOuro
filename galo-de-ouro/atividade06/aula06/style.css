@@ -1,0 +1,187 @@
+:root {
+    --verde:   #1E5631;
+    --verde2:  #1E8449;
+    --verde3:  #3FA06A;
+    --areia:   #FAF9F4;
+    --ambar:   #C8892A;
+    --tinta:   #1A1A1A;
+    --cinza:   #5A6360;
+    --linha:   #D8DED9;
+    --fundo2:  #EAF2ED;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; 
+    line-height: 1.5; 
+    color: var(--tinta); 
+    background: var(--areia);
+}
+
+h1, h2, h3 {
+    color: var(--verde);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 28px; 
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px; 
+    margin-bottom: 15px; 
+}
+
+p {
+    font-size: 14px; 
+    max-width: 500px;
+    color: var(--cinza);
+}
+
+a {
+    color: var(--ambar);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--verde3);
+}
+
+#cabecalho {
+    background-color: var(--fundo2); 
+    padding: 24px 32px;
+    border-bottom: 3px solid var(--verde2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-principal {
+    display: block;
+    width: 280px; 
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.logo-principal:hover {
+    transform: scale(1.01);
+}
+
+#menu-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 0; 
+    align-items: center;
+}
+
+#menu-principal a {
+    color: var(--verde);
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: var(--areia);
+    border: 1px solid var(--linha);
+}
+
+#menu-principal a:hover {
+    background-color: var(--verde2);
+    color: var(--areia);
+    text-decoration: none;
+    border-color: var(--verde2);
+}
+.link-nav {
+    color: var(--ambar);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.secao{ 
+    padding: 48px 32px;
+    border-bottom: 2px solid var(--verde2);
+}
+
+.secao.destaque {
+    padding: 40px 40px;
+    background-color: var(--fundo2);
+}
+
+.aviso-safra{
+    background-color: rgb(179, 228, 213);
+    border-left: 5px solid var(--verde);
+    padding: 10px 40px;
+    margin: 15x 0;
+}
+
+.card-cooperado{
+    border: 1px solid var(--cinza);
+    border-left: 5px solid var(--verde);
+    padding: 20px ;
+    margin-bottom: 16px;
+    border-radius: 30px;
+    border-bottom: 16px;
+    box-shadow: #2b302e ;
+}
+
+.card-cooperado:hover{
+    background-color: #b8ebc7;
+}
+
+table{
+    width: 90%;
+    border-collapse:16px ;
+    margin-top: auto;
+}
+
+th{
+    background-color: var(--verde2);
+    color: #FAF9F4;
+    padding: 9px 16px;
+    text-align: center;
+}
+
+td{
+    padding: 9px 16px;
+    border-bottom: 1px solid var(--verde3);
+    vertical-align:top;
+}
+
+.linha-total{
+    background-color: #D8DED9;
+}
+
+fieldset{
+    border: 1px solid var(--verde2);
+    border-radius: 6px;
+    padding: 20px;
+    border-bottom: 25px;
+}
+
+label{
+    display: block;
+    font-size: 14px;
+    color: var(--cinza);
+    margin-bottom: 4px;
+    margin-top: 12px;
+}
+
+input,select,textarea{
+    width: 100px;
+    border: 1px solid var(--verde2);
+    padding: 4px 12px ;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FAF9F4;
+}
