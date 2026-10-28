@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Loja | Galo de Ouro</title>
 
-    <meta
-        name="description"
-        content="Conheça o catálogo de aves e acessórios do Galo de Ouro."
-    >
+    <meta name="description" content="Conheça o catálogo de aves e acessórios do Galo de Ouro.">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,12 +35,7 @@
 
             <details class="header-cart">
                 <summary>
-                    <svg
-                        class="cart-icon"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        focusable="false"
-                    >
+                    <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path d="M3 3h2l2.4 11.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
                         <circle cx="10" cy="21" r="1"></circle>
                         <circle cx="18" cy="21" r="1"></circle>
@@ -74,22 +67,12 @@
             <p>Conheça os exemplares e consulte suas informações.</p>
         </section>
 
-        <section
-            id="aves"
-            class="shop-section"
-            aria-labelledby="titulo-catalogo"
-        >
+        <section id="aves" class="shop-section" aria-labelledby="titulo-catalogo">
             <h2 id="titulo-catalogo">Aves à venda</h2>
 
             <div class="products-grid">
                 <article id="produto-abel" class="product-card">
-                    <img
-                        src="img/abel.jpg"
-                        alt="Galo Abel Ferreira"
-                        width="600"
-                        height="500"
-                        loading="lazy"
-                    >
+                    <img src="img/abel.jpg" alt="Galo Abel Ferreira" width="600" height="500" loading="lazy">
 
                     <div class="product-body">
                         <h3>Abel Ferreira</h3>
@@ -109,13 +92,7 @@
                 </article>
 
                 <article id="produto-imperador" class="product-card">
-                    <img
-                        src="img/imperador.jpg"
-                        alt="Galo Imperador"
-                        width="600"
-                        height="500"
-                        loading="lazy"
-                    >
+                    <img src="img/imperador.jpg" alt="Galo Imperador" width="600" height="500" loading="lazy">
 
                     <div class="product-body">
                         <h3>Imperador</h3>
@@ -135,13 +112,7 @@
                 </article>
 
                 <article id="produto-bruxo" class="product-card">
-                    <img
-                        src="img/bruxo.jpg"
-                        alt="Galo Bruxo"
-                        width="600"
-                        height="500"
-                        loading="lazy"
-                    >
+                    <img src="img/bruxo.jpg" alt="Galo Bruxo" width="600" height="500" loading="lazy">
 
                     <div class="product-body">
                         <h3>Bruxo</h3>
@@ -162,21 +133,73 @@
             </div>
         </section>
 
-        <section
-            id="acessorios"
-            class="store-section"
-            aria-labelledby="titulo-acessorios"
-        >
+        <section id="acessorios" class="store-section" aria-labelledby="titulo-acessorios">
             <h2 id="titulo-acessorios">Acessórios</h2>
             <p>Nosso catálogo de acessórios estará disponível em breve.</p>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p class="footer-brand">Galo de Ouro</p>
-        <p>Exposição, aves e acessórios.</p>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <a href="index.html#inicio" class="footer-brand">
+                        <span class="footer-symbol" aria-hidden="true">
+                            GO
+                        </span>
 
-        <a href="#topo">Voltar ao topo ↑</a>
+                        <span>Galo de Ouro</span>
+                    </a>
+
+                    <p class="footer-description">
+                        Exposição e venda de aves. Conheça os exemplares
+                        e descubra as características de cada um.
+                    </p>
+                </div>
+
+                <nav class="footer-nav" aria-label="Navegação do rodapé">
+                    <h2 class="footer-title">Navegue</h2>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="index.html#inicio">Início</a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#galos">Exposição</a>
+                        </li>
+
+                        <li>
+                            <a href="loja.html">Loja de aves</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer-shop">
+                    <h2 class="footer-title">Explore nossa loja</h2>
+
+                    <p>
+                        Veja o catálogo e consulte as informações
+                        de cada exemplar.
+                    </p>
+
+                    <a href="loja.html#aves" class="footer-cta">
+                        Ver catálogo
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Galo de Ouro.</p>
+
+                <a href="#topo" class="footer-back-top">
+                    Voltar ao topo
+                    <span aria-hidden="true">↑</span>
+                </a>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>
