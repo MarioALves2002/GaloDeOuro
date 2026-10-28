@@ -222,6 +222,17 @@ summary:focus-visible {
     background-color: var(--cor-escura);
     color: var(--cor-superficie);
 }
+.header-cart[open] > summary::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    cursor: default;
+}
+
+.header-cart > .cart-panel {
+    z-index: 2;
+}
 
 .cart-panel {
     position: absolute;
