@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Galo de Ouro</title>
 
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Galo de Ouro</h1>
         <p>Galos de exposição</p>
 
-        <nav>
+        <nav aria-label="Navegação principal">
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#galos">Galos</a></li>
             </ul>
-
-
         </nav>
     </header>
 
@@ -33,92 +33,174 @@
         </section>
 
         <section id="galos">
-
-            <h2>Galos em destaque </h2>
+            <h2>Galos em destaque</h2>
             <p>Conheça alguns dos galos selecionados para exposição.</p>
 
-        <div class="rooster-cards">
+            <div class="rooster-cards">
+                <article class="rooster-card" aria-labelledby="nome-abel">
+                    <input
+                        type="checkbox"
+                        id="card-abel"
+                        class="card-toggle"
+                        aria-controls="detalhes-abel"
+                    >
 
-            <article class="rooster-card">
-            
-             <input type="checkbox" id="card-abel" class="card-toggle">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3 id="nome-abel">Abel Ferreira</h3>
 
-                <label for="card-abel" class="card-inner">
+                            <figure>
+                                <img
+                                    src="img/abel.jpg"
+                                    alt="Galo português chamado Abel Ferreira"
+                                    loading="lazy"
+                                >
 
+                                <figcaption>
+                                    Abel Ferreira, galo da raça Português.
+                                </figcaption>
+                            </figure>
 
-                <div class="card-front">
-                <h3>Abel Ferreira </h3>
-            
-                <figure>
-                    <img src="img\abel.jpg" alt="Galo Portugues chamado Abel Ferreira">
-            
-                    <figcaption>Abel Ferreira , Galo da raça Portugues</figcaption>
-                </figure>
-            
-                <p>Raça: Portugues</p>
-                </div>
+                            <p>Raça: Português</p>
+                        </div>
 
-                <div class="card-back">
+                        <div class="card-back" id="detalhes-abel">
+                            <h3>Abel Ferreira</h3>
 
-                     <h3>Abel Ferreira</h3>
+                            <p>
+                                Galo de exposição conhecido pelo grande porte
+                                e pela plumagem marcante.
+                            </p>
 
-                <p>
-                    Galo de exposição conhecido pelo grande porte
-                    e pela plumagem marcante.
-                </p>
-                <p>
-                    É uma ave selecionada para exposição principalmente
-                    por sua aparência, conformação e presença.
-                </p>
+                            <p>
+                                É uma ave selecionada para exposição principalmente
+                                por sua aparência, conformação e presença.
+                            </p>
+                        </div>
+                    </div>
 
-                </div>
-                </label>
-          
-            </article>
+                    <label for="card-abel" class="card-control">
+                        <span class="card-control-open">
+                            Ver detalhes de Abel Ferreira
+                        </span>
 
-            <article class="rooster-card">
-                <h3>Imperador</h3>
+                        <span class="card-control-close">
+                            Voltar à foto de Abel Ferreira
+                        </span>
+                    </label>
+                </article>
 
-                 <figure>
-                    <img src="img\imperador.jpg" alt="Galo Carioca chamado Imperador">
+                <article class="rooster-card" aria-labelledby="nome-imperador">
+                    <input
+                        type="checkbox"
+                        id="card-imperador"
+                        class="card-toggle"
+                        aria-controls="detalhes-imperador"
+                    >
 
-                    <figcaption>Imperador , Galo da raça Carioca</figcaption>
-                </figure>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3 id="nome-imperador">Imperador</h3>
 
-                <p>Raça: Carioca</p>
+                            <figure>
+                                <img
+                                    src="img/imperador.jpg"
+                                    alt="Galo carioca chamado Imperador"
+                                    loading="lazy"
+                                >
 
-                <p>
-                  Galo de exposição conhecido pelo grande porte
-                e pela plumagem marcante.  
-                </p>
-            </article>
+                                <figcaption>
+                                    Imperador, galo da raça Carioca.
+                                </figcaption>
+                            </figure>
 
-            <article class="rooster-card">
-                <h3>Bruxo</h3>
+                            <p>Raça: Carioca</p>
+                        </div>
 
-                 <figure>
-                    <img src="img\bruxo.jpg" alt="Galo Carioca chamado Bruxo">
+                        <div class="card-back" id="detalhes-imperador">
+                            <h3>Imperador</h3>
 
-                    <figcaption>Bruxo , Galo da raça Carioca</figcaption>
-                </figure>
+                            <p>
+                                Galo de exposição conhecido pelo grande porte
+                                e pela plumagem marcante.
+                            </p>
 
-                <p>Raça: Carioca</p>
+                            <p>
+                                É uma ave selecionada para exposição principalmente
+                                por sua aparência, conformação e presença.
+                            </p>
+                        </div>
+                    </div>
 
-                <p>
-                    Galo de exposição conhecido pelo grande porte
-                    e pela plumagem marcante. 
-                </p>
-            </article>
+                    <label for="card-imperador" class="card-control">
+                        <span class="card-control-open">
+                            Ver detalhes de Imperador
+                        </span>
 
-        <div>
+                        <span class="card-control-close">
+                            Voltar à foto de Imperador
+                        </span>
+                    </label>
+                </article>
 
+                <article class="rooster-card" aria-labelledby="nome-bruxo">
+                    <input
+                        type="checkbox"
+                        id="card-bruxo"
+                        class="card-toggle"
+                        aria-controls="detalhes-bruxo"
+                    >
+
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3 id="nome-bruxo">Bruxo</h3>
+
+                            <figure>
+                                <img
+                                    src="img/bruxo.jpg"
+                                    alt="Galo carioca chamado Bruxo"
+                                    loading="lazy"
+                                >
+
+                                <figcaption>
+                                    Bruxo, galo da raça Carioca.
+                                </figcaption>
+                            </figure>
+
+                            <p>Raça: Carioca</p>
+                        </div>
+
+                        <div class="card-back" id="detalhes-bruxo">
+                            <h3>Bruxo</h3>
+
+                            <p>
+                                Galo de exposição conhecido pelo grande porte
+                                e pela plumagem marcante.
+                            </p>
+
+                            <p>
+                                É uma ave selecionada para exposição principalmente
+                                por sua aparência, conformação e presença.
+                            </p>
+                        </div>
+                    </div>
+
+                    <label for="card-bruxo" class="card-control">
+                        <span class="card-control-open">
+                            Ver detalhes de Bruxo
+                        </span>
+
+                        <span class="card-control-close">
+                            Voltar à foto de Bruxo
+                        </span>
+                    </label>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>Galo de Ouro</p>
     </footer>
-
-    
 </body>
 </html>
