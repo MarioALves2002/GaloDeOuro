@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loja | Galo de Ouro</title>
+
+    <meta
+        name="description"
+        content="Conheça o catálogo de aves e acessórios do Galo de Ouro."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="topo">
+    <a href="#conteudo" class="skip-link">
+        Pular para o conteúdo
+    </a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="index.html#inicio" class="site-brand">
+                <h1>Galo de Ouro</h1>
+                <p>Exposição, aves e acessórios</p>
+            </a>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#galos">Exposição</a></li>
+                    <li><a href="#aves">Aves à venda</a></li>
+                    <li><a href="#acessorios">Acessórios</a></li>
+                </ul>
+            </nav>
+
+            <details class="header-cart">
+                <summary>
+                    <svg
+                        class="cart-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M3 3h2l2.4 11.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                        <circle cx="10" cy="21" r="1"></circle>
+                        <circle cx="18" cy="21" r="1"></circle>
+                    </svg>
+
+                    <span>Carrinho</span>
+
+                    <span class="cart-count">
+                        0<span class="sr-only"> itens</span>
+                    </span>
+                </summary>
+
+                <div class="cart-panel">
+                    <h2>Seu carrinho</h2>
+                    <p>Nenhum produto adicionado.</p>
+
+                    <div class="cart-panel-links">
+                        <a href="#aves">Ver aves disponíveis</a>
+                        <a href="#acessorios">Explorar acessórios</a>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+        <section class="shop-intro" aria-labelledby="titulo-loja">
+            <h2 id="titulo-loja">Loja Galo de Ouro</h2>
+            <p>Conheça os exemplares e consulte suas informações.</p>
+        </section>
+
+        <section
+            id="aves"
+            class="shop-section"
+            aria-labelledby="titulo-catalogo"
+        >
+            <h2 id="titulo-catalogo">Aves à venda</h2>
+
+            <div class="products-grid">
+                <article id="produto-abel" class="product-card">
+                    <img
+                        src="img/abel.jpg"
+                        alt="Galo Abel Ferreira"
+                        width="600"
+                        height="500"
+                        loading="lazy"
+                    >
+
+                    <div class="product-body">
+                        <h3>Abel Ferreira</h3>
+                        <p class="product-price">Preço sob consulta</p>
+
+                        <details class="product-details">
+                            <summary>Ver informações</summary>
+
+                            <p>Raça: Português.</p>
+
+                            <p>
+                                Exemplar conhecido pelo grande porte
+                                e pela plumagem marcante.
+                            </p>
+                        </details>
+                    </div>
+                </article>
+
+                <article id="produto-imperador" class="product-card">
+                    <img
+                        src="img/imperador.jpg"
+                        alt="Galo Imperador"
+                        width="600"
+                        height="500"
+                        loading="lazy"
+                    >
+
+                    <div class="product-body">
+                        <h3>Imperador</h3>
+                        <p class="product-price">Preço sob consulta</p>
+
+                        <details class="product-details">
+                            <summary>Ver informações</summary>
+
+                            <p>Raça: Carioca.</p>
+
+                            <p>
+                                Exemplar conhecido pelo grande porte
+                                e pela plumagem marcante.
+                            </p>
+                        </details>
+                    </div>
+                </article>
+
+                <article id="produto-bruxo" class="product-card">
+                    <img
+                        src="img/bruxo.jpg"
+                        alt="Galo Bruxo"
+                        width="600"
+                        height="500"
+                        loading="lazy"
+                    >
+
+                    <div class="product-body">
+                        <h3>Bruxo</h3>
+                        <p class="product-price">Preço sob consulta</p>
+
+                        <details class="product-details">
+                            <summary>Ver informações</summary>
+
+                            <p>Raça: Carioca.</p>
+
+                            <p>
+                                Exemplar conhecido pelo grande porte
+                                e pela plumagem marcante.
+                            </p>
+                        </details>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section
+            id="acessorios"
+            class="store-section"
+            aria-labelledby="titulo-acessorios"
+        >
+            <h2 id="titulo-acessorios">Acessórios</h2>
+            <p>Nosso catálogo de acessórios estará disponível em breve.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-brand">Galo de Ouro</p>
+        <p>Exposição, aves e acessórios.</p>
+
+        <a href="#topo">Voltar ao topo ↑</a>
+    </footer>
+</body>
+</html>
