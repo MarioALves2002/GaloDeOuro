@@ -4,37 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Galo de Ouro</title>
+    <meta
+        name="description"
+        content="Conheça os galos de exposição do Galo de Ouro e acompanhe nossa loja de aves e acessórios."
+    >
+
+    <title>Galo de Ouro | Exposição, aves e acessórios</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <header>
-        <h1>Galo de Ouro</h1>
-        <p>Galos de exposição</p>
+<body id="topo">
+    <a href="#conteudo" class="skip-link">
+        Pular para o conteúdo
+    </a>
 
-        <nav aria-label="Navegação principal">
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#galos">Galos</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="#inicio" class="site-brand">
+                <h1>Galo de Ouro</h1>
+                <p>Exposição, aves e acessórios</p>
+            </a>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#galos">Exposição</a></li>
+                    <li><a href="#aves">Aves à venda</a></li>
+                    <li><a href="#acessorios">Acessórios</a></li>
+                </ul>
+            </nav>
+
+            <details class="header-cart">
+                <summary>
+                    <svg
+                        class="cart-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M3 3h2l2.4 11.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                        <circle cx="10" cy="21" r="1"></circle>
+                        <circle cx="18" cy="21" r="1"></circle>
+                    </svg>
+
+                    <span>Carrinho</span>
+
+                    <span class="cart-count">
+                        0<span class="sr-only"> itens</span>
+                    </span>
+                </summary>
+
+                <div class="cart-panel">
+                    <h2>Seu carrinho</h2>
+                    <p>Nenhum produto adicionado.</p>
+
+                    <div class="cart-panel-links">
+                        <a href="#aves">Ver aves disponíveis</a>
+                        <a href="#acessorios">Explorar acessórios</a>
+                    </div>
+                </div>
+            </details>
+        </div>
     </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Bem-vindo ao Galo de Ouro</h2>
+    <main id="conteudo" tabindex="-1">
+        <section id="inicio" aria-labelledby="titulo-inicio">
+            <h2 id="titulo-inicio">Bem-vindo ao Galo de Ouro</h2>
 
             <p>
                 Um espaço dedicado aos galos de exposição,
-                suas raças, características e competições.
+                suas raças e características. Conheça nossos
+                exemplares e acompanhe as novidades da loja.
             </p>
+
+            <div class="intro-actions">
+                <a href="#galos" class="button button-primary">
+                    Conhecer a exposição
+                </a>
+
+                <a href="#aves" class="button button-secondary">
+                    Explorar a loja
+                </a>
+            </div>
         </section>
 
-        <section id="galos">
-            <h2>Galos em destaque</h2>
-            <p>Conheça alguns dos galos selecionados para exposição.</p>
+        <section id="galos" aria-labelledby="titulo-galos">
+            <h2 id="titulo-galos">Galos em destaque</h2>
+
+            <p>
+                Conheça os exemplares e vire os cards
+                para descobrir seus detalhes.
+            </p>
 
             <div class="rooster-cards">
                 <article class="rooster-card" aria-labelledby="nome-abel">
@@ -53,6 +114,8 @@
                                 <img
                                     src="img/abel.jpg"
                                     alt="Galo português chamado Abel Ferreira"
+                                    width="600"
+                                    height="500"
                                     loading="lazy"
                                 >
 
@@ -68,13 +131,13 @@
                             <h3>Abel Ferreira</h3>
 
                             <p>
-                                Galo de exposição conhecido pelo grande porte
-                                e pela plumagem marcante.
+                                Galo de exposição conhecido pelo grande
+                                porte e pela plumagem marcante.
                             </p>
 
                             <p>
-                                É uma ave selecionada para exposição principalmente
-                                por sua aparência, conformação e presença.
+                                Selecionado para exposição por sua
+                                aparência, conformação e presença.
                             </p>
                         </div>
                     </div>
@@ -106,6 +169,8 @@
                                 <img
                                     src="img/imperador.jpg"
                                     alt="Galo carioca chamado Imperador"
+                                    width="600"
+                                    height="500"
                                     loading="lazy"
                                 >
 
@@ -121,13 +186,13 @@
                             <h3>Imperador</h3>
 
                             <p>
-                                Galo de exposição conhecido pelo grande porte
-                                e pela plumagem marcante.
+                                Galo de exposição conhecido pelo grande
+                                porte e pela plumagem marcante.
                             </p>
 
                             <p>
-                                É uma ave selecionada para exposição principalmente
-                                por sua aparência, conformação e presença.
+                                Selecionado para exposição por sua
+                                aparência, conformação e presença.
                             </p>
                         </div>
                     </div>
@@ -159,6 +224,8 @@
                                 <img
                                     src="img/bruxo.jpg"
                                     alt="Galo carioca chamado Bruxo"
+                                    width="600"
+                                    height="500"
                                     loading="lazy"
                                 >
 
@@ -174,13 +241,13 @@
                             <h3>Bruxo</h3>
 
                             <p>
-                                Galo de exposição conhecido pelo grande porte
-                                e pela plumagem marcante.
+                                Galo de exposição conhecido pelo grande
+                                porte e pela plumagem marcante.
                             </p>
 
                             <p>
-                                É uma ave selecionada para exposição principalmente
-                                por sua aparência, conformação e presença.
+                                Selecionado para exposição por sua
+                                aparência, conformação e presença.
                             </p>
                         </div>
                     </div>
@@ -197,10 +264,41 @@
                 </article>
             </div>
         </section>
+
+        <section
+            id="aves"
+            class="store-section"
+            aria-labelledby="titulo-aves"
+        >
+            <h2 id="titulo-aves">Aves à venda</h2>
+
+            <p>
+                Em breve, conheça os exemplares disponíveis para compra.
+            </p>
+
+            <span class="store-status">Catálogo em preparação</span>
+        </section>
+
+        <section
+            id="acessorios"
+            class="store-section"
+            aria-labelledby="titulo-acessorios"
+        >
+            <h2 id="titulo-acessorios">Acessórios</h2>
+
+            <p>
+                Nosso catálogo de acessórios estará disponível em breve.
+            </p>
+
+            <span class="store-status">Novidades em breve</span>
+        </section>
     </main>
 
-    <footer>
-        <p>Galo de Ouro</p>
+    <footer class="site-footer">
+        <p class="footer-brand">Galo de Ouro</p>
+        <p>Exposição, aves e acessórios.</p>
+
+        <a href="#topo">Voltar ao topo ↑</a>
     </footer>
 </body>
 </html>
