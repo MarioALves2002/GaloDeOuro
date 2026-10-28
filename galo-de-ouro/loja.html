@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Loja | Galo de Ouro</title>
 
-    <meta name="description" content="Conheça o catálogo de aves e acessórios do Galo de Ouro.">
+    <meta
+        name="description"
+        content="Conheça o catálogo de aves e acessórios do Galo de Ouro."
+    >
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body id="topo">
+<body id="topo" class="shop-page">
     <a href="#conteudo" class="skip-link">
         Pular para o conteúdo
     </a>
@@ -35,7 +37,12 @@
 
             <details class="header-cart">
                 <summary>
-                    <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <svg
+                        class="cart-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
                         <path d="M3 3h2l2.4 11.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
                         <circle cx="10" cy="21" r="1"></circle>
                         <circle cx="18" cy="21" r="1"></circle>
@@ -63,79 +70,136 @@
 
     <main id="conteudo" tabindex="-1">
         <section class="shop-intro" aria-labelledby="titulo-loja">
+            <nav class="shop-breadcrumb" aria-label="Localização">
+                <a href="index.html">Início</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Loja</span>
+            </nav>
+
             <h2 id="titulo-loja">Loja Galo de Ouro</h2>
-            <p>Conheça os exemplares e consulte suas informações.</p>
+            <p>Conheça os exemplares e encontre sua próxima ave.</p>
+
+            <nav class="shop-categories" aria-label="Categorias da loja">
+                <a href="#aves">Aves</a>
+                <a href="#acessorios">Acessórios</a>
+            </nav>
         </section>
 
-        <section id="aves" class="shop-section" aria-labelledby="titulo-catalogo">
-            <h2 id="titulo-catalogo">Aves à venda</h2>
+        <section
+            id="aves"
+            class="shop-section"
+            aria-labelledby="titulo-catalogo"
+        >
+            <div class="catalog-heading">
+                <h2 id="titulo-catalogo">Aves à venda</h2>
+                <p class="catalog-count">3 exemplares</p>
+            </div>
 
             <div class="products-grid">
                 <article id="produto-abel" class="product-card">
-                    <img src="img/abel.jpg" alt="Galo Abel Ferreira" width="600" height="500" loading="lazy">
+                    <div class="product-media">
+                        <img
+                            src="img/abel.jpg"
+                            alt="Galo Abel Ferreira"
+                            width="600"
+                            height="500"
+                            loading="lazy"
+                        >
+
+                        <span class="product-badge">Ave</span>
+                    </div>
 
                     <div class="product-body">
                         <h3>Abel Ferreira</h3>
+                        <p class="product-meta">Raça: Português</p>
                         <p class="product-price">Preço sob consulta</p>
 
-                        <details class="product-details">
-                            <summary>Ver informações</summary>
-
-                            <p>Raça: Português.</p>
-
-                            <p>
-                                Exemplar conhecido pelo grande porte
-                                e pela plumagem marcante.
-                            </p>
-                        </details>
+                        <button
+                            type="button"
+                            class="product-add"
+                            aria-label="Adicionar Abel Ferreira ao carrinho"
+                            disabled
+                        >
+                            <span aria-hidden="true">+</span>
+                            Adicionar
+                        </button>
                     </div>
                 </article>
 
                 <article id="produto-imperador" class="product-card">
-                    <img src="img/imperador.jpg" alt="Galo Imperador" width="600" height="500" loading="lazy">
+                    <div class="product-media">
+                        <img
+                            src="img/imperador.jpg"
+                            alt="Galo Imperador"
+                            width="600"
+                            height="500"
+                            loading="lazy"
+                        >
+
+                        <span class="product-badge">Ave</span>
+                    </div>
 
                     <div class="product-body">
                         <h3>Imperador</h3>
+                        <p class="product-meta">Raça: Carioca</p>
                         <p class="product-price">Preço sob consulta</p>
 
-                        <details class="product-details">
-                            <summary>Ver informações</summary>
-
-                            <p>Raça: Carioca.</p>
-
-                            <p>
-                                Exemplar conhecido pelo grande porte
-                                e pela plumagem marcante.
-                            </p>
-                        </details>
+                        <button
+                            type="button"
+                            class="product-add"
+                            aria-label="Adicionar Imperador ao carrinho"
+                            disabled
+                        >
+                            <span aria-hidden="true">+</span>
+                            Adicionar
+                        </button>
                     </div>
                 </article>
 
                 <article id="produto-bruxo" class="product-card">
-                    <img src="img/bruxo.jpg" alt="Galo Bruxo" width="600" height="500" loading="lazy">
+                    <div class="product-media">
+                        <img
+                            src="img/bruxo.jpg"
+                            alt="Galo Bruxo"
+                            width="600"
+                            height="500"
+                            loading="lazy"
+                        >
+
+                        <span class="product-badge">Ave</span>
+                    </div>
 
                     <div class="product-body">
                         <h3>Bruxo</h3>
+                        <p class="product-meta">Raça: Carioca</p>
                         <p class="product-price">Preço sob consulta</p>
 
-                        <details class="product-details">
-                            <summary>Ver informações</summary>
-
-                            <p>Raça: Carioca.</p>
-
-                            <p>
-                                Exemplar conhecido pelo grande porte
-                                e pela plumagem marcante.
-                            </p>
-                        </details>
+                        <button
+                            type="button"
+                            class="product-add"
+                            aria-label="Adicionar Bruxo ao carrinho"
+                            disabled
+                        >
+                            <span aria-hidden="true">+</span>
+                            Adicionar
+                        </button>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="acessorios" class="store-section" aria-labelledby="titulo-acessorios">
-            <h2 id="titulo-acessorios">Acessórios</h2>
-            <p>Nosso catálogo de acessórios estará disponível em breve.</p>
+        <section
+            id="acessorios"
+            class="shop-section"
+            aria-labelledby="titulo-acessorios"
+        >
+            <div class="catalog-heading">
+                <h2 id="titulo-acessorios">Acessórios</h2>
+            </div>
+
+            <p class="catalog-empty">
+                Nosso catálogo de acessórios estará disponível em breve.
+            </p>
         </section>
     </main>
 
@@ -161,17 +225,9 @@
                     <h2 class="footer-title">Navegue</h2>
 
                     <ul class="footer-links">
-                        <li>
-                            <a href="index.html#inicio">Início</a>
-                        </li>
-
-                        <li>
-                            <a href="index.html#galos">Exposição</a>
-                        </li>
-
-                        <li>
-                            <a href="loja.html">Loja de aves</a>
-                        </li>
+                        <li><a href="index.html#inicio">Início</a></li>
+                        <li><a href="index.html#galos">Exposição</a></li>
+                        <li><a href="loja.html">Loja de aves</a></li>
                     </ul>
                 </nav>
 
@@ -201,5 +257,4 @@
         </div>
     </footer>
 </body>
-
 </html>
