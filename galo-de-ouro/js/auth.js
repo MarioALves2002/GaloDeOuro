@@ -8,13 +8,14 @@ const formularioCadastro = document.getElementById("register-form");
 
 const tituloAcesso = document.getElementById("auth-title");
 
+const botaoAlternar = document.getElementById("auth-toggle");
 
 formularioLogin.addEventListener("submit",function(evento){
     evento.preventDefault ;
     console.log("Envio Do Formulario OK") ;
 }) ;
 
-const botaoAlternar = document.getElementById("auth-toggle");
+
 
 botaoAlternar.addEventListener("click", function () {
     console.log("Opção de cadastro selecionada.");
@@ -44,4 +45,22 @@ formularioCadastro.addEventListener("submit", function (evento) {
     evento.preventDefault();
 
     console.log("Envio do cadastro identificado.");
+});
+
+formularioCadastro.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    const senha = document.getElementById("register-password").value;
+    const confirmacaoSenha = document.getElementById("register-confirm-password").value;
+    const mensagemCadastro = document.getElementById("register-message");
+
+    if (senha !== confirmacaoSenha) {
+        mensagemCadastro.textContent = "As senhas não coincidem.";
+
+        document.getElementById("register-confirm-password").focus();
+
+        return;
+    }
+
+    mensagemCadastro.textContent = "As senhas conferem.";
 });
