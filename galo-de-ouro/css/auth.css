@@ -64,3 +64,30 @@
     outline: 3px solid var(--cor-destaque);
     outline-offset: 4px;
 }
+
+.auth-switch {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 16px;
+    padding: 8px;
+    border: 0;
+    background-color: transparent;
+    color: var(--cor-texto-suave);
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.auth-switch:hover {
+    color: var(--cor-texto);
+    text-decoration: underline;
+}
+
+.auth-switch:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 4px;
+}
+
+.auth-form[hidden] {
+    display: none;
+}
