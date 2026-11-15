@@ -6,6 +6,8 @@
     <title>Painel de demonstração | Galo de Ouro</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/auth.css">
+    <script src="js/password.js" defer></script>
+    <script src="js/accounts.js" defer></script>
     <script src="js/admin-demo.js" defer></script>
     <script src="js/session.js" defer></script>
     <script src="js/painel.js" defer></script>
@@ -41,6 +43,21 @@
         <h2>Aves cadastradas no painel</h2>
         <p id="bird-list-message" class="auth-message"></p>
         <ul id="bird-list" class="admin-birds"></ul>
+        <h2>Criar administrador</h2>
+        <form id="admin-form" class="auth-form">
+            <label for="admin-name">Nome</label>
+            <input id="admin-name" name="nome" autocomplete="name" required>
+            <label for="admin-email">E-mail</label>
+            <input id="admin-email" name="email" type="email" autocomplete="username" required>
+            <label for="admin-password">Senha</label>
+            <input id="admin-password" name="senha" type="password" autocomplete="new-password" required>
+            <label for="admin-confirm-password">Confirme a senha</label>
+            <input id="admin-confirm-password" name="confirmacao" type="password" autocomplete="new-password" required>
+            <button type="submit" class="button button-primary">Criar administrador</button>
+        </form>
+        <p id="user-message" class="auth-message" role="status"></p>
+        <h2>Contas</h2>
+        <ul id="user-list" class="admin-users"></ul>
         <p><a href="loja.html">Abrir loja</a> · <a href="login.html" id="account-link">Sair</a></p>
     </main>
 </body>

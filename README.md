@@ -56,6 +56,7 @@ O projeto utiliza JavaScript puro, sem frameworks ou bibliotecas externas.
 - `login.html`: cadastro e login.
 - `painel.html`: formulário de cadastro de aves da demonstração.
 - `js/auth.js` e `js/password.js`: autenticação dos clientes com PBKDF2.
+- `js/accounts.js`: validação, listagem e cadastro de contas com hash.
 - `js/session.js`: sessão da aba e saída.
 - `js/cart.js`: carrinho salvo por e-mail da conta.
 - `js/admin-demo.js` e `js/painel.js`: conta fictícia e painel local.
@@ -88,13 +89,16 @@ Não é necessário instalar dependências ou executar uma etapa de compilação
 2. Adicione duas unidades de uma ave, remova uma e recarregue. Confira o contador também na home.
 3. Saia e entre com outro cliente para conferir que os carrinhos são separados.
 4. Como visitante e como cliente, abra `painel.html`: deve voltar ao login.
-5. No login, use a conta fictícia: **admin@galodeouro.demo**, senha **GaloDemo123!**. Ela abre o painel e não pode ser criada pelo cadastro público.
+5. No primeiro acesso, use a conta fictícia: **admin@galodeouro.demo**, senha **GaloDemo123!**. Ela é salva automaticamente com hash, sem substituir uma conta existente. Depois disso, o perfil salvo determina o acesso; mudar seu perfil para cliente mantém essa mudança.
 6. Cadastre uma ave com nome, raça e uma das três fotos existentes. Abra a loja, confira o card e recarregue: a ave deve permanecer.
 7. Clique em Adicionar no novo card. Ele deve entrar no carrinho com seu próprio ID; duas adições aumentam a quantidade na mesma linha.
+8. No painel, confira os totais e crie outro administrador com dados fictícios. Tente repetir o e-mail para verificar a mensagem de duplicidade.
+9. Promova um cliente a administrador e entre com essa conta: deve abrir o painel. Com outro administrador, volte a conta para cliente; ela deve continuar entrando na loja, conservar o carrinho e perder o acesso ao painel.
+10. Deixe apenas um administrador e tente torná-lo cliente: a ação deve ser bloqueada. As ações administrativas consultam o perfil salvo novamente, inclusive depois de calcular o hash de uma conta nova.
 
 Contas de clientes, aves e carrinhos ficam no `localStorage` deste navegador. A sessão fica no `sessionStorage` da aba. Limpar os dados do site apaga esses registros; eles não são enviados a um servidor nem compartilhados entre navegadores.
 
-O painel é uma **demonstração local**. A conta fictícia está definida no código e a verificação de acesso acontece no navegador; isso não oferece proteção de administração para um site real. Clientes continuam usando salt, iterações e hash de senha, sem guardar a senha em texto.
+O painel é uma **demonstração local**. As credenciais iniciais fictícias estão definidas no código e a verificação de acesso acontece no navegador; isso não oferece proteção de administração para um site real. As contas salvas usam salt, iterações e hash de senha. O cadastro público sempre cria clientes. Trocar o perfil altera apenas esse campo da conta, preservando credenciais e carrinho.
 
 ## Responsividade
 

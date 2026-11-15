@@ -149,3 +149,38 @@
     border-radius: var(--raio-pequeno);
     object-fit: cover;
 }
+
+.admin-users {
+    display: grid;
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.admin-users li {
+    display: grid;
+    gap: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cor-borda);
+    overflow-wrap: anywhere;
+}
+
+.admin-users button {
+    min-height: 44px;
+    padding: 8px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-pequeno);
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+    font: inherit;
+    cursor: pointer;
+}
+
+.admin-users button:hover {
+    background-color: var(--cor-destaque);
+}
+
+.admin-users button:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 4px;
+}

@@ -4,6 +4,10 @@ let sessaoAtual = null;
 function atualizarAcesso() {
     try {
         sessaoAtual = JSON.parse(sessionStorage.getItem("galo-de-ouro:sessao"));
+        if (sessaoAtual) {
+            const conta = JSON.parse(localStorage.getItem("galo-de-ouro:usuario:" + sessaoAtual.email));
+            sessaoAtual = conta ? { nome: conta.nome, email: conta.email, perfil: conta.perfil } : null;
+        }
     } catch {
         sessaoAtual = null;
     }

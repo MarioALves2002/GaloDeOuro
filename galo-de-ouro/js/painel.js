@@ -6,18 +6,8 @@ let quantidadeAvesOriginais = null;
 
 function atualizarResumo() {
     const aves = JSON.parse(localStorage.getItem("galo-de-ouro:aves")) || [];
-    const contas = [];
-    for (let indice = 0; indice < localStorage.length; indice++) {
-        const chave = localStorage.key(indice);
-        if (chave.startsWith("galo-de-ouro:usuario:")) {
-            const conta = JSON.parse(localStorage.getItem(chave));
-            if (conta.email !== administradorDemo.email) {
-                contas.push(conta);
-            }
-        }
-    }
-    // O login reconhece esta conta fixa mesmo sem registro no localStorage.
-    contas.push(administradorDemo);
+    const contas = listarContas();
+    mostrarContas(contas);
 
     document.getElementById("total-birds").textContent = quantidadeAvesOriginais === null
         ? "—" : quantidadeAvesOriginais + aves.length;
@@ -49,10 +39,11 @@ function atualizarResumo() {
 }
 
 async function carregarPainel() {
-    if (!verificarAdministrador()) {
-        return;
-    }
     try {
+        await garantirAdministradorDemo();
+        if (!verificarAdministrador()) {
+            return;
+        }
         atualizarResumo();
         if (quantidadeAvesOriginais === null) {
             const resposta = await fetch("loja.html");
@@ -73,8 +64,7 @@ async function carregarPainel() {
 
 function verificarAdministrador() {
     atualizarAcesso();
-    const autorizado = sessaoAtual && sessaoAtual.email === administradorDemo.email
-        && sessaoAtual.perfil === administradorDemo.perfil;
+    const autorizado = sessaoAtual && sessaoAtual.perfil === "administrador";
     painel.hidden = !autorizado;
     if (!autorizado) {
         window.location.replace("login.html");
@@ -108,6 +98,80 @@ formularioAve.addEventListener("submit", function (evento) {
         return;
     }
     carregarPainel();
+});
+
+const formularioAdmin = document.getElementById("admin-form");
+const mensagemUsuario = document.getElementById("user-message");
+
+function mostrarContas(contas) {
+    const lista = document.getElementById("user-list");
+    lista.replaceChildren();
+    contas.forEach(function (conta) {
+        const linha = document.createElement("li");
+        const descricao = document.createElement("span");
+        descricao.textContent = conta.nome + " · " + conta.email + " · " + conta.perfil;
+        const botao = document.createElement("button");
+        botao.type = "button";
+        botao.textContent = conta.perfil === "administrador" ? "Tornar cliente" : "Tornar administrador";
+        botao.setAttribute("aria-label", botao.textContent + ": " + conta.email);
+        botao.addEventListener("click", function () { alterarPerfil(conta.email); });
+        linha.append(descricao, botao);
+        lista.append(linha);
+    });
+}
+
+function alterarPerfil(email) {
+    if (!verificarAdministrador()) {
+        return;
+    }
+    try {
+        const chave = "galo-de-ouro:usuario:" + email;
+        const conta = JSON.parse(localStorage.getItem(chave));
+        if (conta.perfil === "administrador") {
+            const administradores = listarContas().filter(function (usuario) {
+                return usuario.perfil === "administrador";
+            });
+            if (administradores.length <= 1) {
+                mensagemUsuario.textContent = "Não é possível retirar a permissão do último administrador.";
+                return;
+            }
+            conta.perfil = "cliente";
+        } else {
+            conta.perfil = "administrador";
+        }
+        localStorage.setItem(chave, JSON.stringify(conta));
+        mensagemUsuario.textContent = "Perfil atualizado para " + conta.perfil + ".";
+        carregarPainel();
+    } catch {
+        mensagemUsuario.textContent = "Não foi possível alterar o perfil neste navegador.";
+    }
+}
+
+formularioAdmin.addEventListener("submit", async function (evento) {
+    evento.preventDefault();
+    if (!verificarAdministrador()) {
+        return;
+    }
+    const botao = formularioAdmin.querySelector("button[type='submit']");
+    botao.disabled = true;
+    mensagemUsuario.textContent = "Criando administrador...";
+    try {
+        await cadastrarConta(
+            document.getElementById("admin-name").value,
+            document.getElementById("admin-email").value,
+            document.getElementById("admin-password").value,
+            document.getElementById("admin-confirm-password").value,
+            "administrador", verificarAdministrador
+        );
+        formularioAdmin.reset();
+        mensagemUsuario.textContent = "Administrador criado.";
+        carregarPainel();
+    } catch (erro) {
+        mensagemUsuario.textContent = erro instanceof DOMException
+            ? "Não foi possível salvar a conta neste navegador." : erro.message;
+    } finally {
+        botao.disabled = false;
+    }
 });
 
 window.addEventListener("pageshow", carregarPainel);

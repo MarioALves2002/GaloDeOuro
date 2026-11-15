@@ -19,40 +19,25 @@ formularioLogin.addEventListener("submit", async function (evento) {
     mensagemLogin.textContent = "Verificando conta...";
 
     try {
-        let usuario;
-        if (email === administradorDemo.email) {
-            if (senha !== administradorDemo.senha) {
-                mensagemLogin.textContent = "E-mail ou senha incorretos.";
-                return;
-            }
-            usuario = administradorDemo;
-        } else {
-            usuario = JSON.parse(localStorage.getItem("galo-de-ouro:usuario:" + email));
-
-            if (!usuario) {
-                mensagemLogin.textContent = "E-mail ou senha incorretos.";
-                return;
-            }
-
-            const hash = await calcularHashSenha(
-                senha,
-                new Uint8Array(usuario.credencial.salt),
-                usuario.credencial.iteracoes
-            );
-
-            if (hash !== usuario.credencial.hash) {
-                mensagemLogin.textContent = "E-mail ou senha incorretos.";
-                return;
-            }
+        await garantirAdministradorDemo();
+        const usuario = JSON.parse(localStorage.getItem("galo-de-ouro:usuario:" + email));
+        if (!usuario) {
+            mensagemLogin.textContent = "E-mail ou senha incorretos.";
+            return;
         }
-
+        const hash = await calcularHashSenha(senha,
+            new Uint8Array(usuario.credencial.salt), usuario.credencial.iteracoes);
+        if (hash !== usuario.credencial.hash) {
+            mensagemLogin.textContent = "E-mail ou senha incorretos.";
+            return;
+        }
         sessionStorage.setItem("galo-de-ouro:sessao", JSON.stringify({
             nome: usuario.nome,
             email: email,
-            perfil: email === administradorDemo.email ? "administrador" : "cliente"
+            perfil: usuario.perfil
         }));
         mensagemLogin.textContent = "Login realizado. Redirecionando...";
-        window.location.href = email === administradorDemo.email ? "painel.html" : "loja.html";
+        window.location.href = usuario.perfil === "administrador" ? "painel.html" : "loja.html";
     } catch {
         mensagemLogin.textContent = "Não foi possível entrar. Confira os dados salvos e tente novamente.";
     } finally {
@@ -93,62 +78,17 @@ formularioCadastro.addEventListener("submit", async function (evento) {
     const confirmacaoSenha = document.getElementById("register-confirm-password").value;
     const mensagemCadastro = document.getElementById("register-message");
 
-    if (email === administradorDemo.email) {
-        mensagemCadastro.textContent = "Este e-mail é reservado para a demonstração. Use outro e-mail.";
-        return;
-    }
-
-    if (nome === "") {
-        mensagemCadastro.textContent = "Informe seu nome.";
-
-        document.getElementById("register-name").focus();
-
-        return;
-    }
-
-    if (senha !== confirmacaoSenha) {
-        mensagemCadastro.textContent = "As senhas não coincidem.";
-
-        document.getElementById("register-confirm-password").focus();
-
-        return;
-    }
-
     const botaoCadastrar = formularioCadastro.querySelector("button[type='submit']");
     botaoCadastrar.disabled = true;
     mensagemCadastro.textContent = "Criando conta...";
-
     try {
-        const chaveUsuario = "galo-de-ouro:usuario:" + email;
-        if (localStorage.getItem(chaveUsuario) !== null) {
-            mensagemCadastro.textContent = "Já existe uma conta com esse e-mail.";
-            return;
-        }
-
-        const salt = crypto.getRandomValues(new Uint8Array(16));
-        const iteracoes = 600000;
-        const hash = await calcularHashSenha(senha, salt, iteracoes);
-
-        if (localStorage.getItem(chaveUsuario) !== null) {
-            mensagemCadastro.textContent = "Já existe uma conta com esse e-mail.";
-            return;
-        }
-
-        const novoUsuario = {
-            nome: nome,
-            email: email,
-            perfil: "cliente",
-            credencial: {
-                salt: Array.from(salt),
-                iteracoes: iteracoes,
-                hash: hash
-            }
-        };
-        localStorage.setItem(chaveUsuario, JSON.stringify(novoUsuario));
+        await garantirAdministradorDemo();
+        await cadastrarConta(nome, email, senha, confirmacaoSenha, "cliente");
         formularioCadastro.reset();
         mensagemCadastro.textContent = "Conta criada. Agora você já pode entrar.";
-    } catch {
-        mensagemCadastro.textContent = "Não foi possível salvar a conta neste navegador.";
+    } catch (erro) {
+        mensagemCadastro.textContent = erro instanceof DOMException
+            ? "Não foi possível salvar a conta neste navegador." : erro.message;
     } finally {
         botaoCadastrar.disabled = false;
     }
