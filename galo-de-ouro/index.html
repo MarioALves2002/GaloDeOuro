@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="js/session.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 
 <body id="topo">
@@ -53,7 +54,8 @@
 
                 <div class="cart-panel">
                     <h2>Seu carrinho</h2>
-                    <p>Nenhum produto adicionado.</p>
+                    <p id="cart-message" role="status">Nenhum produto adicionado.</p>
+                    <ul id="cart-items" class="cart-items"></ul>
 
                     <div class="cart-panel-links">
                         <a href="#aves">Ver aves disponíveis</a>

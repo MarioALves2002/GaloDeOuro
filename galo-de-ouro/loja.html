@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/loja.css">
     <script src="js/session.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 
 <body id="topo" class="shop-page">
@@ -60,7 +61,8 @@
 
                 <div class="cart-panel">
                     <h2>Seu carrinho</h2>
-                    <p>Nenhum produto adicionado.</p>
+                    <p id="cart-message" role="status">Nenhum produto adicionado.</p>
+                    <ul id="cart-items" class="cart-items"></ul>
 
                     <div class="cart-panel-links">
                         <a href="#aves">Ver aves disponíveis</a>
@@ -121,7 +123,6 @@
                             type="button"
                             class="product-add"
                             aria-label="Adicionar Abel Ferreira ao carrinho"
-                            disabled
                         >
                             <span aria-hidden="true">+</span>
                             Adicionar
@@ -151,7 +152,6 @@
                             type="button"
                             class="product-add"
                             aria-label="Adicionar Imperador ao carrinho"
-                            disabled
                         >
                             <span aria-hidden="true">+</span>
                             Adicionar
@@ -181,7 +181,6 @@
                             type="button"
                             class="product-add"
                             aria-label="Adicionar Bruxo ao carrinho"
-                            disabled
                         >
                             <span aria-hidden="true">+</span>
                             Adicionar

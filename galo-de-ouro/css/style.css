@@ -253,6 +253,47 @@ summary:focus-visible {
     font-size: 14px;
 }
 
+.cart-items {
+    display: grid;
+    gap: 12px;
+    max-height: 40vh;
+    margin: 0 0 20px;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+}
+
+.cart-items:empty {
+    display: none;
+}
+
+.cart-items li {
+    display: grid;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.cart-items button {
+    justify-self: start;
+    min-height: 44px;
+    padding: 6px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-pequeno);
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+    font: inherit;
+    cursor: pointer;
+}
+
+.cart-items button:hover {
+    background-color: var(--cor-destaque);
+}
+
+.cart-items button:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
 .cart-panel-links {
     display: grid;
     gap: 10px;
