@@ -50,7 +50,8 @@
     margin-top: 24px;
 }
 
-.auth-form input {
+.auth-form input,
+.auth-form select {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--cor-borda);
@@ -60,7 +61,8 @@
     font: inherit;
 }
 
-.auth-form input:focus-visible {
+.auth-form input:focus-visible,
+.auth-form select:focus-visible {
     outline: 3px solid var(--cor-destaque);
     outline-offset: 4px;
 }

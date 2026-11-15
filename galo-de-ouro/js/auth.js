@@ -19,31 +19,40 @@ formularioLogin.addEventListener("submit", async function (evento) {
     mensagemLogin.textContent = "Verificando conta...";
 
     try {
-        const usuario = JSON.parse(localStorage.getItem("galo-de-ouro:usuario:" + email));
+        let usuario;
+        if (email === administradorDemo.email) {
+            if (senha !== administradorDemo.senha) {
+                mensagemLogin.textContent = "E-mail ou senha incorretos.";
+                return;
+            }
+            usuario = administradorDemo;
+        } else {
+            usuario = JSON.parse(localStorage.getItem("galo-de-ouro:usuario:" + email));
 
-        if (!usuario) {
-            mensagemLogin.textContent = "E-mail ou senha incorretos.";
-            return;
-        }
+            if (!usuario) {
+                mensagemLogin.textContent = "E-mail ou senha incorretos.";
+                return;
+            }
 
-        const hash = await calcularHashSenha(
-            senha,
-            new Uint8Array(usuario.credencial.salt),
-            usuario.credencial.iteracoes
-        );
+            const hash = await calcularHashSenha(
+                senha,
+                new Uint8Array(usuario.credencial.salt),
+                usuario.credencial.iteracoes
+            );
 
-        if (hash !== usuario.credencial.hash) {
-            mensagemLogin.textContent = "E-mail ou senha incorretos.";
-            return;
+            if (hash !== usuario.credencial.hash) {
+                mensagemLogin.textContent = "E-mail ou senha incorretos.";
+                return;
+            }
         }
 
         sessionStorage.setItem("galo-de-ouro:sessao", JSON.stringify({
             nome: usuario.nome,
             email: email,
-            perfil: usuario.perfil
+            perfil: email === administradorDemo.email ? "administrador" : "cliente"
         }));
-        mensagemLogin.textContent = "Login realizado. Abrindo a loja...";
-        window.location.href = "loja.html";
+        mensagemLogin.textContent = "Login realizado. Redirecionando...";
+        window.location.href = email === administradorDemo.email ? "painel.html" : "loja.html";
     } catch {
         mensagemLogin.textContent = "Não foi possível entrar. Confira os dados salvos e tente novamente.";
     } finally {
@@ -83,6 +92,11 @@ formularioCadastro.addEventListener("submit", async function (evento) {
     const senha = document.getElementById("register-password").value;
     const confirmacaoSenha = document.getElementById("register-confirm-password").value;
     const mensagemCadastro = document.getElementById("register-message");
+
+    if (email === administradorDemo.email) {
+        mensagemCadastro.textContent = "Este e-mail é reservado para a demonstração. Use outro e-mail.";
+        return;
+    }
 
     if (nome === "") {
         mensagemCadastro.textContent = "Informe seu nome.";
