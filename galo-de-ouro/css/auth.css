@@ -103,3 +103,49 @@
 .auth-message:empty {
     display: none;
 }
+
+.admin-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.admin-summary div {
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-pequeno);
+}
+
+.admin-summary dt {
+    color: var(--cor-texto-suave);
+    font-size: 13px;
+}
+
+.admin-summary dd {
+    margin: 4px 0 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.admin-birds {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.admin-birds li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cor-borda);
+    overflow-wrap: anywhere;
+}
+
+.admin-birds img {
+    flex-shrink: 0;
+    border-radius: var(--raio-pequeno);
+    object-fit: cover;
+}

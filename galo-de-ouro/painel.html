@@ -13,8 +13,16 @@
 <body class="auth-page">
     <main id="admin-panel" class="auth-card" hidden>
         <a href="index.html" class="auth-brand">Galo de Ouro</a>
-        <h1 class="auth-title">Cadastrar ave</h1>
+        <h1 class="auth-title">Painel de demonstração</h1>
         <p class="auth-description">Painel de demonstração local. As aves ficam salvas apenas neste navegador.</p>
+        <dl class="admin-summary" aria-label="Resumo do projeto">
+            <div><dt>Aves no catálogo</dt><dd id="total-birds">—</dd></div>
+            <div><dt>Contas</dt><dd id="total-accounts">—</dd></div>
+            <div><dt>Clientes</dt><dd id="total-clients">—</dd></div>
+            <div><dt>Administradores</dt><dd id="total-admins">—</dd></div>
+        </dl>
+        <p id="panel-message" class="auth-message" role="status"></p>
+        <h2>Cadastrar ave</h2>
         <form id="bird-form" class="auth-form">
             <label for="bird-name">Nome da ave</label>
             <input id="bird-name" name="nome" required>
@@ -30,6 +38,9 @@
             <button type="submit" class="button button-primary">Salvar ave</button>
             <p id="bird-message" class="auth-message" role="status"></p>
         </form>
+        <h2>Aves cadastradas no painel</h2>
+        <p id="bird-list-message" class="auth-message"></p>
+        <ul id="bird-list" class="admin-birds"></ul>
         <p><a href="loja.html">Abrir loja</a> · <a href="login.html" id="account-link">Sair</a></p>
     </main>
 </body>
